@@ -122,9 +122,11 @@ body{
     background: linear-gradient(90deg, rgba(79,197,211,1) 0%, rgba(61,174,207,1) 77%);
     border-radius: 25px;
     cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .portada_button:hover{
     background: var(--Cyan);
+    transform: scale(1.05);
 }
 .hero{
     position: relative;
@@ -246,6 +248,10 @@ display: block;
     border-radius: 6px;
     box-shadow: 0 0 15px -3px var(--DarkBlueTesti);
     max-width: 328px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card:hover{
+    transform: scale(1.05);
 }
 .card_paragraph{
     font-family: var(--font-body);
