@@ -1,0 +1,417 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+
+
+:root{
+    /* Colors */
+
+    /* Primary */
+--DarkBlueIntro: hsl(217, 28%, 15%); /*(intro and email sign up background)*/
+--DarkBlueMain: hsl(218, 28%, 13%); /*(main background)*/
+--DarkBlueFooter: hsl(216, 53%, 9%); /*(footer background)*/
+--DarkBlueTesti: hsl(219, 30%, 18%); /*(testimonials background)*/
+
+    /* Accent */
+
+--Cyan: rgb(101, 226, 217); /*(inside call-to-action gradient)*/
+--Blue: rgb(51, 158, 204); /*(inside call-to-action gradient)*/
+--LightRed: hsl(0, 100%, 63%); /*Error*/
+
+    /* ### Neutral */
+--White: hsl(0, 0%, 100%);
+
+    /* font */
+    /*Headings, Call-to-actions, Header Navigation */
+    --font-body: 'Open Sans', sans-serif;
+    /* head */
+    --font-head: 'Raleway', sans-serif;
+}
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: var(--DarkBlueIntro);
+    color: var(--White);
+}
+
+.container{
+    width: 90%;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1200px;
+    /* border: 1px solid red; */
+}
+.nav{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    gap: 1.2rem;
+    height: 80px;
+}
+.nav_logo{
+    max-width: 100px;
+}
+.nav_img{
+    width: 100%;
+    display: block;
+}
+
+.nav_link{
+    font-family: var(--font-head);
+    color: var(--White);
+    text-decoration: none;
+    font-size: .9rem;
+}
+.nav_link:first-of-type{
+    margin-left: auto;
+}
+.img_container{
+    padding-bottom: 95px;
+}
+.portada{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    top: -70px;
+}
+.img_container{
+    margin-top: 30px;
+}
+.portada_img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 420px;
+}
+.hero_portada{
+    background-color: var(--DarkBlueMain);
+}
+.portada_title{
+    font-family: var(--font-head);
+    font-weight: 600;
+    line-height: 2.2rem;
+    font-size: 1.5rem;
+}
+.portada_paragraph{
+    font-family: var(--font-body);
+    font-size: .9rem;
+    line-height: 1.5;
+    padding-inline: 15px;
+    font-weight: 400;
+}
+.portada_button{
+    display: block;
+    padding: 1rem 4.4rem;
+    color: var(--White);
+    font-weight: 700;
+    font-size: 1rem 2rem;
+    font-family: var(--font-body);
+    background: linear-gradient(90deg, rgba(79,197,211,1) 0%, rgba(61,174,207,1) 77%);
+    border-radius: 25px;
+    align-self: center;
+    border: 0;
+}
+.hero{
+    position: relative;
+    /* background-image: url(/images/bg-curvy-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain; */
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-image: url(/images/bg-curvy-mobile.svg);
+    height: 140px;
+    left: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover; 
+    z-index: -1;
+}
+.hero_text{
+    background-color: var(--DarkBlueMain);
+}
+
+.main{
+    background-color: var(--DarkBlueMain);
+    padding-bottom: 4rem;
+}
+.features{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features_container{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font-head);
+    padding: 8px;
+    max-width: 400px;
+}
+.features_img{
+display: block;
+}
+.features_title{
+    margin: 20px 0 12px;
+    font-size: 1.2rem;
+}
+.features_paragraph{
+    font-size: .9rem;
+    line-height: 1.5;
+}
+.productive{
+    background-color: var(--DarkBlueMain);
+    padding-bottom: 4rem;
+}
+.productive_container{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    font-family: var(--font-body);
+}
+.product_picture{
+    margin: 0 auto;
+}
+.product_img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+}
+.product_text{
+    width: 100%;
+    margin: 0 auto;
+}
+.productive_title{
+    font-family: var(--font-head);
+    margin: 20px 0 12px;
+    font-size: 1.2rem;
+}
+.productive_link{
+    display: inline-flex;
+    margin: 20px 0;
+    color: var(--Cyan);
+    text-decoration: none;
+    border-bottom: 2px solid cyan;
+    align-self: flex-start;
+    justify-items: center;
+    padding: 5px 0;
+}
+.arrow{
+    width: 24px;
+    margin-left: 10px;
+}
+.review{
+    background-color: var(--DarkBlueMain);
+}
+.review_container{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.card{
+    background-color: hsl(222, 29%, 18%);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 0 15px -3px black;
+    max-width: 328px;
+}
+.card_paragraph{
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: .8rem;
+}
+.username{
+    display: flex;
+    align-items: center;
+    margin:12px 0;
+    font-family: var(--font-head);
+    font-size: .7rem;
+}
+.card_img{
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+}
+.contact{
+    background-color: var(--DarkBlueMain);
+}
+.contact_container{
+    width: 91%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: rgb(27, 35, 48);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem 2rem;
+    position: relative;
+    top: 150px;
+    box-shadow: 0px 0px 20px -5px black;
+    border-radius: 10px;
+}
+.contact_title{
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1rem;
+
+}
+.contact_paragraph{
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: .8rem;
+}
+
+.contact_email{
+    padding: 16px 30px;
+    border-radius: 20px;
+    border: 0;
+    font-size: .7rem;
+}
+.contact_button{
+    border-radius: 20px;
+    padding: 16px 0;
+    border: 0;
+    font-size: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--White);
+    background: linear-gradient(90deg, rgba(79,197,211,1) 0%, rgba(61,174,207,1) 77%);
+}
+.contact_title{
+    font-size: 1rem;
+}
+.contact_paragraph{
+    font-size: .8rem;
+}
+
+.footer{
+    background-color: var(--DarkBlueFooter);
+}
+.info{
+    padding-top: 200px;
+}
+.footer_img{
+    padding: 1rem;
+}
+.container_info{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+}
+.box{
+    margin-top: 10px;
+    display: flex;
+    gap: 2rem;
+    font-size: .9rem;
+    
+}
+.fa-solid{
+    padding: 5px;
+}
+.footer_location{
+    padding-left: 5px;
+    padding-right: 30px;
+
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    margin-top: 3rem;
+    font-size: .9rem;
+    font-weight: 400;
+}
+.link{
+    text-decoration: none;
+    color: var(--White);
+}
+.social{
+    margin: 20px auto;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 30px;
+}
+.fa-brands{
+    border: 1px solid white;
+    padding: 9px;
+    border-radius: 50%;
+    position: relative;
+
+}
+
+@media (min-width: 768px){
+    .features{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .productive_container{
+        padding-top: 30px;
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+    }
+    .productive_title{
+        margin: 20px 20px 12px 0;
+        font-size: 2rem;
+        padding-right: 90px;
+        font-weight: 700;
+    }
+    .product_picture{
+        min-width: 400px;
+        max-width: 500px;
+        margin: 0 ;
+    }
+    .product_img{
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+    .product_text{
+        max-width: 500px;
+        margin: 0;
+        margin-left: 40px;
+    }
+    .review_container{
+        padding-top: 50px;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .card_paragraph{
+        font-weight: 400;
+        font-size: .9rem;
+    }
+   
+}
+
+
+
+
+
