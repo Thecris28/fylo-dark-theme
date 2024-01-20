@@ -8,7 +8,7 @@
 
     /* Primary */
 --DarkBlueIntro: hsl(217, 28%, 15%); /*(intro and email sign up background)*/
---DarkBlueMain: hsl(218, 28%, 13%); /*(main background)*/
+--DarkBlueMain: #181f2b; /*(main background)*/
 --DarkBlueFooter: hsl(216, 53%, 9%); /*(footer background)*/
 --DarkBlueTesti: hsl(219, 30%, 18%); /*(testimonials background)*/
 
@@ -68,19 +68,15 @@ body{
     text-decoration: none;
     font-size: .9rem;
 }
+.nav_link:hover{
+    color: var(--Cyan);
+    text-decoration: underline;
+}
 .nav_link:first-of-type{
     margin-left: auto;
 }
 .img_container{
     padding-bottom: 95px;
-}
-.portada{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    position: relative;
-    top: -70px;
 }
 .img_container{
     margin-top: 30px;
@@ -91,8 +87,17 @@ body{
     margin: 0 auto;
     max-width: 420px;
 }
-.hero_portada{
-    background-color: var(--DarkBlueMain);
+
+.hero_text{
+    position: relative;
+}
+.portada{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    top: -70px;
 }
 .portada_title{
     font-family: var(--font-head);
@@ -108,16 +113,18 @@ body{
     font-weight: 400;
 }
 .portada_button{
-    display: block;
+    text-decoration: none;
     padding: 1rem 4.4rem;
     color: var(--White);
     font-weight: 700;
-    font-size: 1rem 2rem;
+    font-size: 1rem;
     font-family: var(--font-body);
     background: linear-gradient(90deg, rgba(79,197,211,1) 0%, rgba(61,174,207,1) 77%);
     border-radius: 25px;
-    align-self: center;
-    border: 0;
+    cursor: pointer;
+}
+.portada_button:hover{
+    background: var(--Cyan);
 }
 .hero{
     position: relative;
@@ -160,6 +167,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     font-family: var(--font-head);
     padding: 8px;
@@ -219,6 +227,9 @@ display: block;
     width: 24px;
     margin-left: 10px;
 }
+.productive_link:hover ,.arrow:hover {
+    filter: brightness(0) saturate(100%) invert(99%) sepia(99%) saturate(0%) hue-rotate(312deg) brightness(106%) contrast(100%);
+}
 .review{
     background-color: var(--DarkBlueMain);
 }
@@ -233,7 +244,7 @@ display: block;
     background-color: hsl(222, 29%, 18%);
     padding: 1rem;
     border-radius: 6px;
-    box-shadow: 0 0 15px -3px black;
+    box-shadow: 0 0 15px -3px var(--DarkBlueTesti);
     max-width: 328px;
 }
 .card_paragraph{
@@ -259,6 +270,7 @@ display: block;
 }
 .contact_container{
     width: 91%;
+    max-width: 750px;
     overflow: hidden;
     margin: 0 auto;
     background-color: rgb(27, 35, 48);
@@ -266,7 +278,7 @@ display: block;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    padding: 2rem 2rem;
+    padding: 2rem 2.4rem;
     position: relative;
     top: 150px;
     box-shadow: 0px 0px 20px -5px black;
@@ -282,7 +294,14 @@ display: block;
     font-family: var(--font-body);
     font-weight: 400;
     font-size: .8rem;
+    
 }
+.contact_input{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 
 .contact_email{
     padding: 16px 30px;
@@ -299,6 +318,9 @@ display: block;
     cursor: pointer;
     color: var(--White);
     background: linear-gradient(90deg, rgba(79,197,211,1) 0%, rgba(61,174,207,1) 77%);
+}
+.contact_button:hover{
+    background: var(--Cyan);
 }
 .contact_title{
     font-size: 1rem;
@@ -342,9 +364,9 @@ display: block;
     gap: .8rem;
     margin-top: 3rem;
     font-size: .9rem;
-    font-weight: 400;
 }
 .link{
+    font-weight: 400;
     text-decoration: none;
     color: var(--White);
 }
@@ -359,11 +381,69 @@ display: block;
     border: 1px solid white;
     padding: 9px;
     border-radius: 50%;
-    position: relative;
-
+}
+.fa-brands:hover{
+    color: var(--Cyan);
+    border: 1px solid var(--Cyan);
 }
 
 @media (min-width: 768px){
+    .nav{
+        
+        margin: 20px auto;
+        gap: 2rem;
+        height: 80px;
+    }
+    
+    .img_container{
+        position: relative;
+        margin-top: 30px;
+        z-index: 2;
+
+    }
+    .portada{
+        max-width: 480px;
+    }
+    .portada_title{
+        font-weight: 700;
+        font-size: 1.7rem;
+    }
+    .portada_paragraph{
+        font-size: .9rem;
+        line-height: 1.5;
+        padding-inline: 15px;
+    }
+    
+    .hero::before{
+        content: none;
+    }
+    .hero_text{
+        background-color: var(--DarkBlueIntro);
+    }
+    .hero_text::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        background-image: url(/images/bg-curvy-desktop.svg);
+        height: 700px;
+        left: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size:contain; 
+        z-index: 0; 
+    }
+    .portada_button{
+        align-self: center;
+        padding: 1rem 4.4rem;
+        color: var(--White);
+        font-weight: 700;
+        font-size: 1rem;
+        font-family: var(--font-body);
+        background: linear-gradient(90deg, rgba(79,197,211,1) 0%, rgba(61,174,207,1) 77%);
+        border-radius: 25px;
+        cursor: pointer;
+    }
     .features{
         display: flex;
         flex-direction: row;
@@ -372,7 +452,7 @@ display: block;
         justify-content: space-evenly;
     }
     .productive_container{
-        padding-top: 30px;
+        padding-top: 0;
         flex-direction: row;
         text-align: left;
         align-items: center;
@@ -407,6 +487,66 @@ display: block;
     .card_paragraph{
         font-weight: 400;
         font-size: .9rem;
+    }
+
+    .contact_input{
+        padding: 15px 20px;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1.5rem;
+    }
+    .contact_email{
+        flex-grow: 1;
+        padding: 12px;
+
+    }
+    .contact_button{
+        flex-grow: 0;
+        padding: 0rem 2rem;
+        font-size: .8rem;
+    }
+    .contact_title{
+        font-size: 1.5rem;
+    }
+    .contact_paragraph{
+        padding: 0 40px;
+    }
+    
+    .info{
+        padding-top: 200px;
+    }
+    .footer_img{
+        padding: 1rem;
+    }
+    .container_info{
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 70px;
+    }
+    .footer_location{
+        padding: 0;
+    }
+    .box{
+        margin-top: 0px;
+        gap: 1rem;
+        font-size: .9rem;
+        max-width: 400px;
+        
+    }
+    .links{
+        flex-direction: column;
+        margin: 0;
+        font-size: .9rem;
+        font-weight: 330;
+    }
+    .link:hover{
+        font-weight: 700;
+    }
+    .social{
+        margin: 0;
+        gap: 1.5rem;
+        align-items: flex-start;
+        padding: 0px;
     }
    
 }
